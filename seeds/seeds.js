@@ -1,8 +1,6 @@
 const sequelize = require('../config/connection');
 const { User } = require('../models');
 
-//why isn't User turning green like most models? constructors?
-
 const userData = require('./userData.json');
 
 const seedDb = async ()=>{

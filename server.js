@@ -7,10 +7,8 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const controllers = require('./controllers');
 
 const app = express();
-const PORT = process.env.PORT || 7777
-const hbs = exphs.create({ helpers });
-
-const http = require('http').Server(app);
+const PORT = process.env.PORT || 3000
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: "Not 100% sure how to use secrets, secret",
@@ -37,5 +35,5 @@ app.use("/", middleware.getRequests);
 app.use(controllers);
 
 sequelize.sync({ force: false }).then(() => {
-    http.listen(PORT, () => console.log(`Listening on the coolest PORT ${PORT}`));
+    http.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 })
